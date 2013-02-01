@@ -20,7 +20,7 @@ public class AllTheEvil {
 		instance.context = context;
 		instance.myDB = new MyDB(context);
 		PhotoList.photoClassList = new ArrayList<PhotoList>();
-		instance.initDBdata(); // DB -> PhotoClassList로 옮기는 것
+	//	instance.initDBdata(); // DB -> PhotoClassList로 옮기는 것
 	}
 	
 	public static void close() {
@@ -41,7 +41,7 @@ public class AllTheEvil {
 		return myDB;
 	}
 	
-	public void initDBdata(){
+	public void initDBdata(){ // 미완성
 		MyDB mDB = instance.getDB();
 		mDB.open();		
 		Cursor cursor = mDB.fetchAllRec();

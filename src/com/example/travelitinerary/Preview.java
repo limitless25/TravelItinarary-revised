@@ -136,7 +136,7 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
 				//uri 를 가져온 두가지 방법
 				String urii = MediaStore.Images.Media.insertImage(mContext.getContentResolver(), picture, title, description);
 				
-				Log.e("URI", urii);
+				Log.i("URI", urii);
 				/*
 				Uri uri = MediaStore.Images.Media.getContentUri("external");
 				mUri = uri;
@@ -176,12 +176,12 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
 				}
 				
 ////////////////DATABASE 		
-				MyDB mDB;
+/*				MyDB mDB;
 				mDB = AllTheEvil.getInstance().getDB();
 				mDB.open();
-				mDB.createRec(crtPoint.getLatitudeE6(), crtPoint.getLongitudeE6(), urii, _index);
+				mDB.createRec(crtPoint.getLongitudeE6(), crtPoint.getLatitudeE6(), urii, _index);
 				mDB.close();
-				///////////////////////
+	*/			///////////////////////
 			}			
     	});
     }

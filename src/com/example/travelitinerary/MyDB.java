@@ -23,7 +23,7 @@ public class MyDB {
 	
 	private static final String DATABASE_CREATE = 
 			"create table data (_id integer primary key autoincrement," + 
-	"Longitude int not null, Latitude int not null, Path text not null, Index integer not null);";
+	"Longitude int not null, Latitude int not null, Index int not null, Path text not null, );";
 	
 	private static final String DATABASE_NAME = "datum.db";
 	private static final String DATABASE_TABLE = "data";
@@ -66,7 +66,7 @@ public class MyDB {
 		mDbHelper.close();
 	}
 	
-	public long createRec(int lat, int longi, String path, int index){
+	public long createRec(int longi, int lat, String path, int index){
 		ContentValues initialValues = new ContentValues();
 		initialValues.put(KEY_LONGI, longi);
 		initialValues.put(KEY_LATI, lat);
@@ -85,13 +85,13 @@ public class MyDB {
 	}
 	
 	public Cursor fetchAllRec(){
-		return mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_LONGI, KEY_LATI, KEY_PATH, KEY_INDEX}, null, null, null, null, null);
+		return mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_LONGI, KEY_LATI, KEY_INDEX, KEY_PATH }, null, null, null, null, null);
 	}
 	
 	public Cursor fetchRec(long rowID) throws SQLException{
 		Cursor mCursor = 
 				mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_LONGI, 
-						KEY_LATI, KEY_PATH, KEY_INDEX}, KEY_ROWID + "=" + rowID, null, null, null, null);
+						KEY_LATI, KEY_INDEX, KEY_PATH }, KEY_ROWID + "=" + rowID, null, null, null, null);
 		if(mCursor != null)
 			mCursor.moveToFirst();		
 		return mCursor;

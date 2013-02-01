@@ -36,7 +36,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 ///////////////////////////////////////////////////////////
     		   	
             super(context);
-            
+/*            
             MyDB mDB;
             mDB = AllTheEvil.getInstance().getDB();
             mDB.open();
@@ -51,7 +51,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 	        }
             cursor.close();
             mDB.close();
-            
+  */          
 // the way to make layout on Java code            
             setPadding(10, 0, 10, balloonBottomOffset);
             layout = new LinearLayout(context);
